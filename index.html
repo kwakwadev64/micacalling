@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Appel Vidéo PeerJS 📞</title>
+    <!-- Chargement de la bibliothèque PeerJS depuis le CDN officiel -->
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+    <h1>Mon Application Vidéo 🎥</h1>
+    
+    <!-- Affichage de mon identifiant -->
+    <p>Mon ID : <span id="my-id" style="font-weight: bold;">En attente...</span></p>
+
+    <!-- Zone pour les vidéos -->
+    <div style="display: flex; gap: 20px;">
+        <div>
+            <h3>Moi</h3>
+            <video id="local-video" autoplay muted playsinline style="width: 300px; background: black;"></video>
+        </div>
+        <div>
+            <h3>Mon ami</h3>
+            <video id="remote-video" autoplay playsinline style="width: 300px; background: black;"></video>
+        </div>
+    </div>
+
+    <input type="text" id="remote-id" placeholder="ID de ton ami">
+    <button id="call-btn">Appeler 📞</button>
+
+    <!-- Script logique que nous allons écrire -->
+    <script src="app.js"></script>
+</body>
+</html>
