@@ -1,5 +1,26 @@
+const peerConfiguration = {
+    config: {
+        iceServers: [
+            // Serveurs STUN gratuits (vérifient votre adresse publique)
+            { urls: 'stun:stun.l.google.com:19302' },
+            { urls: 'stun:global.stun.twilio.com:3478' },
+            
+            // Serveurs TURN gratuits d'OpenRelay (relayent la vidéo si le P2P bloque)
+            {
+                urls: 'turn:openrelay.metered.ca:80',
+                username: 'openrelayproject',
+                credential: 'openrelayproject'
+            },
+            {
+                urls: 'turn:openrelay.metered.ca:443',
+                username: 'openrelayproject',
+                credential: 'openrelayproject'
+            }
+        ]
+    }
+};
 // 1. On se connecte au réseau PeerJS
-const peer = new Peer();
+const peer = new Peer(peerConfiguration);
 let localStream; // Cette variable stockera notre flux vidéo/audio
 
 // 2. On affiche notre ID dès qu'il est généré par le serveur
